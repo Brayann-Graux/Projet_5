@@ -1,0 +1,104 @@
+/* PROMISE HEADBAND */
+
+.promise {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 220px;
+  margin: 50px auto;
+  border-radius: 25px;
+  background-image: url("../Assets/Images/background_promise.png");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 48px;
+    font-family: 'Montserrat' sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    -webkit-text-stroke: 1px black;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    z-index: 1;
+  }
+}
+
+/* HOUSE LIST */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: calc(90% - 40px);
+  height: 829px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  border-radius: 20px;
+  overflow-y: auto;
+  background-color: #f6f6f6;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #f6f6f6;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: #ff6060;
+  }
+
+
+  .cardItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    margin: auto;
+
+    img {
+      border-radius: 10px;
+      width: 340px;
+      height: 340px;
+      object-fit: cover;
+    }
+  }
+
+  .titleCard {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    bottom: 10px;
+    left: 10px;
+    max-width: 50%;
+    background: rgba(3, 2, 2, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+
+}
