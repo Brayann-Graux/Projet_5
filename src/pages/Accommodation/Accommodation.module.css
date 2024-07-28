@@ -1,0 +1,118 @@
+.main {
+    font-weight: 500;
+}
+
+/* Section comportant le titre, le lieu, les tags, l'hôte, et la note */
+.introduction {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Section comportant la description et les équipements */
+.details {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+/* Div contenant le titre, le lieu, et les tags */
+.mainIntroduction {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tags {
+    background-color: #FF6060;
+    color: white;
+    border-radius: 10px;
+    white-space: nowrap;
+    padding: 5px 20px 5px 20px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+}
+
+/* Div contenant la photo et le nom de l'hôte, et sa note */
+.hostInformations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Div contenant la photo et le nom de l'hôte */
+.host {
+    display: flex;
+    align-items: center;
+}
+
+.nameHost {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.pictureHost {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Div contenant les étoiles de la note */
+.rating {
+    text-align: right;
+}
+
+.starNocolor {
+    color: #E3E3E3;
+}
+
+.star {
+    margin-left: 5px;
+}
+
+@media (max-width: 576px) {
+    .introduction {
+        flex-direction: column;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .mainIntroduction {
+        width: 100%;
+    }
+
+    .hostInformations {
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .pictureHost {
+        height: 32px;
+        width: 32px;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 0;
+    }
+}

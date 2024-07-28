@@ -1,0 +1,36 @@
+.main {
+    text-align: center;
+}
+
+.error {
+    font-size: 12em;
+    font-weight: 700;
+    margin: 0;
+}
+
+.text {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 10vh;
+}
+
+.link {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .error {
+        font-size: 7em;
+    }
+    
+    .text {
+        font-size: 1.2em;
+        font-weight: 500;
+        padding-bottom: 60px;
+    }
+
+    .link {
+        font-size: 0.9em;
+    }
+}
