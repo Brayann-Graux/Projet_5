@@ -1,0 +1,40 @@
+// Conteneur principal pour le centrage du contenu
+.main {
+    text-align: center;
+}
+
+// Style pour les messages d'erreur, très grand pour une visibilité accrue
+.error {
+    font-size: 12em;
+    font-weight: 700;
+    margin: 0;
+
+    // Réduction de la taille de la police pour les petits écrans
+    @media (max-width: 576px) {
+        font-size: 7em;
+    }
+}
+
+// Définition du style pour les textes généraux
+.text {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 10vh;
+
+    // Adaptations pour les petits écrans
+    @media (max-width: 576px) {
+        font-size: 1.2em;
+        padding-bottom: 60px;
+    }
+}
+
+// Style pour les liens, soulignés pour les distinguer
+.link {
+    text-decoration: underline;
+    font-weight: 500;
+
+    // Ajustement de la taille de la police sur les petits écrans
+    @media (max-width: 576px) {
+        font-size: 0.9em;
+    }
+}

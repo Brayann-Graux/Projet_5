@@ -1,4 +1,4 @@
-import styles from "./Collapse.module.css"
+import styles from "./Collapse.module.scss"
 import { useState } from "react"
 
 function Collapse({ titleCollapse, textCollapse }) {

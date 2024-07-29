@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/Banner"
 import Gallery from "../../components/Gallery/Gallery"
-import styles from "./Home.module.css"
+import styles from "./Home.module.scss"
 
 function Home() {
   return (

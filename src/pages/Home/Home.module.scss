@@ -1,0 +1,20 @@
+// Classe de base pour la mise en forme d'un div spécifique
+.div {
+    color: white;          // Couleur du texte
+    font-size: 2em;        // Taille du texte
+    width: 100%;           // Largeur complète
+    text-align: center;    // Texte centré
+    position: absolute;    // Position absolue pour le positionnement précis
+    bottom: 43%;           // Position par rapport au bas
+    font-weight: 500;      // Poids de la police
+
+    // Adaptation pour les écrans de petite taille (moins de 576px de large)
+    @media (max-width: 576px) {
+        font-size: 1.7em;       // Taille de la police réduite
+        bottom: 23%;            // Position ajustée vers le haut
+        text-align: left;       // Texte aligné à gauche
+        margin-left: 20px;      // Marge à gauche pour le décalage
+        width: 251px;           // Largeur fixe pour le contrôle du design
+        padding-right: 20px;    // Padding à droite pour éviter que le texte touche le bord
+    }
+}

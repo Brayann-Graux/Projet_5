@@ -1,46 +1,46 @@
 import { useParams, useNavigate } from "react-router-dom"
 import { useEffect } from "react"
-import styles from "./Accommodation.module.css"
+import styles from "./Logements.module.scss"
 import Slideshow from "../../components/Slideshow/Slideshow"
-import datas from "../../datas/accommodations.json"
+import datas from "../../datas/logements.json"
 import Collapse from "../../components/Collapse/Collapse"
 
-function Accommodation() {
+function Logements() {
   // Récupération de l'id dans les paramètres de l"URL
   const { id } = useParams()
   const navigate = useNavigate()
   // Vérification de l'existence de données et redirection si ce n'est pas le cas
-  const dataAccommodation = datas.find(data => data.id === id)
+  const dataLogements = datas.find(data => data.id === id)
   useEffect(() => {
-    if (dataAccommodation === undefined) {
+    if (dataLogements === undefined) {
       navigate("/error")
     }
-  }, [dataAccommodation])
+  }, [dataLogements])
   
-  const equipments = dataAccommodation && dataAccommodation.equipments
+  const equipments = dataLogements && dataLogements.equipments
   // Création des tags
-  const tags = dataAccommodation && dataAccommodation.tags
-  const createTags = () => dataAccommodation && tags.map(tag => <span className={styles.tags} key={`${tag}-${dataAccommodation.id}`}>{tag}</span>)
+  const tags = dataLogements && dataLogements.tags
+  const createTags = () => dataLogements && tags.map(tag => <span className={styles.tags} key={`${tag}-${dataLogements.id}`}>{tag}</span>)
   // Séparation du nom de l'hôte en plusieurs parties
-  const nameArray = dataAccommodation &&  dataAccommodation.host.name.split(" ")
-  const name =  dataAccommodation && nameArray.map((word, index) => <span key={`${word}-${index}-${dataAccommodation.id}`}>{word}</span>)
+  const nameArray = dataLogements &&  dataLogements.host.name.split(" ")
+  const name =  dataLogements && nameArray.map((word, index) => <span key={`${word}-${index}-${dataLogements.id}`}>{word}</span>)
   // Transformation de la note en "étoiles"
-  const stars =  dataAccommodation && [1, 2, 3, 4, 5]
-  const rating = () => dataAccommodation && stars.map((star) => Math.round(dataAccommodation.rating) >= star ? <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataAccommodation.id}`} className={styles.star + " " + styles.starNocolor + " fa-solid fa-star"}></i>)
+  const stars =  dataLogements && [1, 2, 3, 4, 5]
+  const rating = () => dataLogements && stars.map((star) => Math.round(dataLogements.rating) >= star ? <i key={`${star}-${dataLogements.id}`} className={styles.star + " fa-solid fa-star"}></i> : <i key={`${star}-${dataLogements.id}`} className={styles.star + " " + styles.starNocolor + " fa-solid fa-star"}></i>)
 
 	return (
-   dataAccommodation && (
+   dataLogements && (
       <main role="main" className={styles.main}>
         <section aria-label="Carousel">
           <Slideshow
-            pictures={dataAccommodation.pictures}
-            title={dataAccommodation.title}
+            pictures={dataLogements.pictures}
+            title={dataLogements.title}
           />
         </section>
         <section aria-label="Informations principales" className={styles.introduction}>
           <div className={styles.mainIntroduction}>
-            <h2 className={styles.h2}>{dataAccommodation.title}</h2>
-            <div>{dataAccommodation.location}</div>
+            <h2 className={styles.h2}>{dataLogements.title}</h2>
+            <div>{dataLogements.location}</div>
             <div className={styles.tagsContainer}>
               {createTags()}
             </div>
@@ -48,7 +48,7 @@ function Accommodation() {
           <div className={styles.hostInformations}>
               <div className={styles.host}>
                 <div className={styles.nameHost}>{name}</div>
-                <img className={styles.pictureHost} src={dataAccommodation.host.picture} alt={`${dataAccommodation.host.name}`} />
+                <img className={styles.pictureHost} src={dataLogements.host.picture} alt={`${dataLogements.host.name}`} />
               </div>
               <div className={styles.rating}>
                 {rating()}
@@ -58,14 +58,14 @@ function Accommodation() {
         <section aria-label="Détails du logement" className={styles.details}>
               <Collapse
                 titleCollapse="Description"
-                textCollapse={dataAccommodation.description}
+                textCollapse={dataLogements.description}
               />
               <Collapse
                 titleCollapse="Équipements"
                 textCollapse={
                   <ul>
                     {equipments.map(equipment => {
-                      return (<li key={`${equipment}-${dataAccommodation.id}`}>{equipment}</li>)
+                      return (<li key={`${equipment}-${dataLogements.id}`}>{equipment}</li>)
                     })}
                   </ul>
                 }
@@ -76,4 +76,4 @@ function Accommodation() {
   )
 }
 
-export default Accommodation
+export default Logements

@@ -1,4 +1,4 @@
-import styles from "./Slideshow.module.css"
+import styles from "./Slideshow.module.scss"
 import { useEffect, useState } from "react";
 
 function Slideshow( {pictures, title} ) {

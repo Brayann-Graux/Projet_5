@@ -1,0 +1,10 @@
+// Bloc principal pour les sections
+.section {
+    width: 80%;    // Définit la largeur de base pour les sections
+    margin: auto;  // Centre la section horizontalement
+
+    // Media query pour les écrans petits
+    @media (max-width: 576px) {
+        width: 100%; // Sur les petits écrans, la section prend toute la largeur
+    }
+}

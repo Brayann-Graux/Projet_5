@@ -1,0 +1,82 @@
+.carousel {
+    width: 100%;
+    height: 415px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 576px) {
+        height: 255px;
+    }
+
+    .slide {
+        width: 100%;
+        height: 415px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 25px;
+
+        @media (max-width: 576px) {
+            height: 255px;
+            border-radius: 10px;
+        }
+
+        &[animation="0"] {
+            animation: changeSlide1 1200ms;
+        }
+
+        &[animation="1"] {
+            animation: changeSlide2 1200ms;
+        }
+    }
+
+    .counter {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: white;
+        bottom: 25px;
+        font-weight: 400;
+
+        @media (max-width: 576px) {
+            display: none;
+        }
+    }
+
+    .arrow {
+        color: white;
+        cursor: pointer;
+        padding: 50px;
+        font-size: 6em;
+
+        @media (max-width: 576px) {
+            padding: 30px;
+            font-size: 3em;
+        }
+    }
+
+    .button {
+        position: absolute;
+        z-index: 50;
+        border: none;
+        background-color: inherit;
+    }
+
+    .arrowLeft {
+        left: 0;
+    }
+
+    .arrowRight {
+        right: 0;
+    }
+}
+
+@keyframes changeSlide1 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes changeSlide2 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
