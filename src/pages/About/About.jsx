@@ -1,12 +1,13 @@
 import Banner from "../../components/Banner/Banner"
 import Collapse from "../../components/Collapse/Collapse"
-import styles from "./About.module.scss"
+// import styles from "./About.module.scss"
+import "./About.scss"
 
 function About() {
   return (
     <main role="main">
       <Banner />
-      <section className={styles.section}>
+      <section>
         <h2 className="visually-hidden">À propos</h2>
         <Collapse
           titleCollapse="Fiabilité"

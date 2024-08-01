@@ -1,18 +1,18 @@
-.footer {
+footer {
     background-color: black;
     color: white;
     text-align: center;
-}
 
-.img {
-    padding: 40px 0 30px;
-}
-
-.div {
-    padding-bottom: 20px;
-
-    @media (max-width: 576px) {
-        font-size: 0.8em;
-        padding-bottom: 40px;
+    img {
+        padding: 40px 0 30px;
     }
+    
+    div {
+        padding-bottom: 20px;
+    
+        @media (max-width: 576px) {
+            font-size: 0.8em;
+            padding-bottom: 40px;
+        }
+    }  
 }

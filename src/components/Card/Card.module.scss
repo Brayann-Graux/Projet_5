@@ -26,7 +26,8 @@
 
     &:hover {
         opacity: 0.5;
-        transform: translateY(-10px);
+        // transform: translateY(-10px);
+        transform: scale(1.1);
     }
 
     @media (max-width: 992px) {

@@ -1,16 +1,29 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import logo from "../../assets/images/logo-header.png"
-import styles from "./Header.module.scss"
+import "../../style/style.scss"
+import "./Header.scss"
 
 function Header() {
   return (
-    <header role="banner" className={styles.header}>
+    <header role="banner" >
       <h1 className="visually-hidden">Kasa, location immobilière entre particuliers</h1>
-      <img className={styles.img} src={logo} alt="Logo de Kasa" title="Logo de Kasa" />
+      <Link to="/"><img src={logo} alt="Logo de Kasa" title="Logo de Kasa" /></Link>     
       <nav role="navigation" aria-label="main navigation">
-        <ul className={styles.ul}>
-          <li className={styles.li}><Link className={styles.a} to="/">Accueil</Link></li>
-          <li className={styles.li}><Link className={styles.a} to="/about">À Propos</Link></li>
+        <ul>
+          <li>
+            <NavLink className={({ isActive }) =>
+                            isActive
+                                ? 'nav-active'
+                                : ''
+                        } to="/">Accueil</NavLink>
+          </li>
+          <li>
+            <NavLink className={({ isActive }) =>
+                            isActive
+                                ? 'nav-active'
+                                : ''
+                        } to="/about">À Propos</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
