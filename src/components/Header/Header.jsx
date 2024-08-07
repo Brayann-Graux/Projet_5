@@ -6,7 +6,6 @@ import "./Header.scss"
 function Header() {
   return (
     <header role="banner" >
-      <h1 className="visually-hidden">Kasa, location immobilière entre particuliers</h1>
       <Link to="/"><img src={logo} alt="Logo de Kasa" title="Logo de Kasa" /></Link>     
       <nav role="navigation" aria-label="main navigation">
         <ul>

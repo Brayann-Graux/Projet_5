@@ -1,7 +1,6 @@
-import Banner from "../../components/Banner/Banner"
-import Collapse from "../../components/Collapse/Collapse"
-// import styles from "./About.module.scss"
-import "./About.scss"
+import Banner from "../../components/Banner/Banner";
+import Collapse from "../../components/Collapse/Collapse";
+import "./About.scss";
 
 function About() {
   return (
@@ -27,7 +26,7 @@ function About() {
         />
       </section>
     </main>
-  )
+  );
 }
 
-export default About
+export default About;

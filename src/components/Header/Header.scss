@@ -1,13 +1,14 @@
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: 500;
     padding: 20px 40px;
+    max-height: 68px;
 
     @media (max-width: 576px) {
         padding: 15px;
     }
-
 
     img {
         width: 100%;
@@ -20,14 +21,15 @@ header {
 
     ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: center; /* Centrer les éléments de la liste */
         padding-left: 0;
-        align-items: center;
-        
+        margin: 0; /* Ajouter une marge de 0 pour supprimer tout espace supplémentaire */
+        list-style: none; /* Supprimer les puces de la liste */
+
         li {
             font-size: 1.1em;
             margin-left: 45px;
-    
+
             @media (max-width: 576px) {
                 margin-left: 17px;
                 font-size: 0.9em;
@@ -41,9 +43,8 @@ header {
 
                 &.nav-active {
                     text-decoration: underline !important;
-                    color:red;
                 }
             }
         }
-    }    
+    }
 }

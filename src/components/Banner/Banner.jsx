@@ -1,17 +1,22 @@
-import styles from "./Banner.module.scss"
-import bannerAbout from "../../assets/images/banner-about.webp"
-import bannerHome from "../../assets/images/banner-home.webp"
+import "./Banner.scss";
+import bannerAbout from "../../assets/images/banner-about.webp";
+import bannerHome from "../../assets/images/banner-home.webp";
+import { useLocation } from "react-router-dom";
 
 function Banner({ children }) {
-    const bannerImage = window.location.hash.substring(1).toString() === "/about" ? bannerAbout : bannerHome
-    const classNameBanner = bannerImage === bannerHome ? styles.banner + " " + styles.bannerHome : styles.banner
+    const location = useLocation();
+    const isAboutPage = location.pathname === "/about";
+    const bannerImage = isAboutPage ? bannerAbout : bannerHome;
+    const classNameBanner = isAboutPage ? "banner bannerAbout" : "banner bannerHome";
 
     return (
         <section aria-label="Bannière" className={classNameBanner}>
-            <img className={styles.img} src={bannerImage} alt="Bannière - Paysage" title="Bannière - Paysage "/>
-            {children}
+            <div className="overlay">
+                {children}
+            </div>
+            <img className="img" src={bannerImage} alt="Bannière - Paysage" title="Bannière - Paysage "/>
         </section>
-    )
+    );
 }
 
-export default Banner
+export default Banner;

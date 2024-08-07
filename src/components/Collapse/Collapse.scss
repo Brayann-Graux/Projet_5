@@ -1,0 +1,117 @@
+.collapse {
+    width: 100%;
+
+    overflow: hidden;
+    margin-bottom: 30px; // Espace de 30px par défaut lorsqu'elles sont fermées
+
+    & + collapse {
+        margin-top: 0; // Supprime l'espace entre les collapses fermés
+    }
+
+    &[animation="1"] {
+        margin-bottom: 10px; // Ajout de la marge de 10px lorsqu'ouvertes
+    }
+
+    &[animation="1"] > containerText {
+        animation: open 200ms    
+    }
+
+    &[animation="0"] > containerText {
+        animation: close 600ms ease-in-out;
+    }
+
+    button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        background-color: #FF6060;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        height: 50px;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+
+        
+    
+    
+        &:hover {
+            opacity: 0.7;
+        
+    
+            @media (max-width: 576px) {
+                padding: 20px;
+            }
+
+            div { 
+                padding: 35px 15px 17px;
+                background-color: #F7F7F7;
+                border-radius: 5px;
+                position: relative;
+                bottom: 5px;
+                height: 100%;
+                color: black; // Texte en noir
+                font-size: 1.2em;
+
+                @media (max-width: 576px) {
+                    padding: 25px 20px 10px;
+                }
+            }
+        }
+    }
+}
+
+
+.containerText{
+    margin: 10px;
+}
+
+title {
+    font-weight: 500;
+    font-size: 1.3em;
+
+    @media (max-width: 576px) {
+        font-size: 1.1em;
+    }
+}
+
+.icone {
+    transition: transform 600ms;
+
+    &[animation="1"] {
+        transform: rotate(-180deg);
+    }
+
+    &[animation="0"] {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-70px);
+    }
+    100% {
+        opacity: 1;
+        max-height: 400px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes close {
+    0% {
+        opacity: 1;
+        max-height: 400px;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        max-height: 0;
+        transform: translateY(-70px);
+    }
+}
